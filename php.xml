@@ -7,7 +7,7 @@
   <component name="PhpInterpretersPhpInfoCache">
     <phpInfoCache>
       <interpreter name="PHP">
-        <phpinfo binary_type="PHP" php_cgi="D:\php-7.0.11\php-cgi.exe" php_cli="D:\php-7.0.11\php.exe" path_separator=";" version="7.0.11">
+        <phpinfo binary_type="PHP" php_cgi="D:\php-7.0.11\php-cgi.exe" php_cli="D:\php-7.0.11\php.exe" path_separator=";" version="7.0.11" warning="Failed loading D:\php-debug-pack-7.0.11&#10;">
           <additional_php_ini />
           <configuration_file />
           <configuration_options>
