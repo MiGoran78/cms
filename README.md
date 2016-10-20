@@ -1,2 +1,2 @@
-# Example
-Hello world!
+# Course 
+PHP with Laravel
