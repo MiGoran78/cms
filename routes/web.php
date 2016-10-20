@@ -175,7 +175,7 @@ Route::get('/create', function(){
 //});
 
 
-Route::get('', function(){
+Route::get('/softDelete', function(){
 
 
 });
