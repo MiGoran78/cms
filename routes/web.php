@@ -45,9 +45,9 @@ use App\Post;
 
 
 //DATABASE Raw SQL Queries
-Route::get('/insert', function(){
-    DB::insert('insert into posts(title, content) value(?, ?)', ['Laravel is awsome...', 'Laravel content...']);
-});
+//Route::get('/insert', function(){
+//    DB::insert('insert into posts(title, content) value(?, ?)', ['Laravel is awsome...', 'Laravel content...']);
+//});
 
 
 //Route::get('/read', function() {
@@ -142,12 +142,10 @@ Route::get('/basicinsert', function(){
 
 
 
-//Route::get('/create', function(){
-//
-//    Post::create(['title'=>'create method', 'content'=>'something...']);
-//
-//
-//});
+Route::get('/create', function(){
+
+    Post::create(['title'=>'create method', 'content'=>'something...']);
+});
 
 
 
@@ -159,11 +157,11 @@ Route::get('/basicinsert', function(){
 
 
 
-//Route::get('/delete', function(){
-//
-//    $post = Post::find(2);
-//    $post->delete();
-//});
+Route::get('/delete', function(){
+
+    $post = Post::find(4);
+    $post->delete();
+});
 
 
 
@@ -177,19 +175,36 @@ Route::get('/basicinsert', function(){
 
 //Route::get('/softDelete', function(){
 //
-//    Post::find(10)->delete();
+//    Post::find(2)->delete();
 //});
 
 
 
-Route::get('/readSoftDelete', function(){
-
-//    $post = Post::find(12);
-//    return $post;
+//Route::get('/readSoftDelete', function(){
 //
-//    $post = Post::withTrashed()->where('id',1)->get();
-//    return $post;
+////    $post = Post::find(12);
+////    return $post;
+////
+////    $post = Post::withTrashed()->where('id',1)->get();
+////    return $post;
+//
+//    $post = Post::onlyTrashed()->where('is_admin', 0)->get();
+//
+//});
 
-    $post = Post::onlyTrashed()->where('is_admin', 0)->get();
 
+
+//Route::get('/restore', function(){
+//
+//    Post::withTrashed()->where('is_admin',0)->restore();
+//});
+
+
+
+Route::get('/forcedelete', function(){
+
+    Post::onlyTrashed()->where('is_admin',0)->forceDelete();
 });
+
+
+
