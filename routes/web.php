@@ -151,6 +151,31 @@ Route::get('/create', function(){
 
 
 
+//Route::get('/update',function(){
+//
+//    Post::where('id', 2)->where('is_admin', 0)->update(['title'=>'NEW PHP TITLE', 'content'=>'new content']);
+//
+//});
 
 
 
+//Route::get('/delete', function(){
+//
+//    $post = Post::find(2);
+//    $post->delete();
+//});
+
+
+
+//Route::get('/delete2', function(){
+//
+//    //Post::destroy(3);
+//    Post::destroy([4,5]);
+//    Post::where('is_admin', 0)->delete();
+//});
+
+
+Route::get('', function(){
+
+
+});
