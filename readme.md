@@ -1,2 +1,2 @@
-# Course
+# Exercise
 Laravel PHP Framework

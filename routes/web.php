@@ -204,7 +204,7 @@ Route::get('/delete', function(){
 Route::get('/forcedelete', function(){
 
     Post::onlyTrashed()->where('is_admin',1)->forceDelete();
-    
+
 });
 
 
