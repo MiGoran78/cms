@@ -119,22 +119,22 @@ Route::get('/insert', function(){
 
 
 
-//Route::get('/basicinsert', function(){
-//
-//    $post = new Post::find(1);
-//
-//    $post->title = 'new Eloquent inserttitle';
-//    $post->content = 'new Eloquent content';
-//
-//    $post->save();
-//});
+Route::get('/basicinsert', function(){
+
+    $post = new Post;
+
+    $post->title = 'new Eloquent inserttitle';
+    $post->content = 'new Eloquent content';
+
+    $post->save();
+});
 
 
 //Route::get('/basicinsert2', function(){
 //
 //    $post = Post::find(2);
 //
-//    $post->title = 'new Eloquent inserttitle 2';
+//    $post->title = 'new Eloquent insert title 2';
 //    $post->content = 'new Eloquent content 2';
 //
 //    $post->save();
@@ -142,12 +142,12 @@ Route::get('/insert', function(){
 
 
 
-Route::get('/create', function(){
-
-    Post::create(['title'=>'create method', 'content'=>'something...']);
-
-
-});
+//Route::get('/create', function(){
+//
+//    Post::create(['title'=>'create method', 'content'=>'something...']);
+//
+//
+//});
 
 
 
@@ -175,7 +175,21 @@ Route::get('/create', function(){
 //});
 
 
-Route::get('/softDelete', function(){
+//Route::get('/softDelete', function(){
+//
+//    Post::find(10)->delete();
+//});
 
+
+
+Route::get('/readSoftDelete', function(){
+
+//    $post = Post::find(12);
+//    return $post;
+//
+//    $post = Post::withTrashed()->where('id',1)->get();
+//    return $post;
+
+    $post = Post::onlyTrashed()->where('is_admin', 0)->get();
 
 });
