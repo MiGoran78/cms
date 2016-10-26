@@ -1,7 +1,7 @@
 <?php
 
 use App\Post;
-
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -92,12 +92,12 @@ use App\Post;
 //});
 
 
-//Route::get('/find', function (){
-//
-//    $post = Post::find(2);
-//
-//    return $post->title;
-//});
+Route::get('/find', function (){
+
+    $post = Post::find(2);
+
+    return $post->title;
+});
 
 
 
@@ -207,5 +207,24 @@ Route::get('/forcedelete', function(){
 
 });
 
+
+
+
+
+//-----------------------
+// ELOQUENT Relationship
+//-----------------------
+
+////One to one relationship
+Route::get('/user/{id}/post', function($id){
+
+    return User::find($id)->post->content;
+});
+
+
+Route::get('/post/{id}/user', function($id){
+
+    return Post::find($id)->user->email;
+});
 
 
