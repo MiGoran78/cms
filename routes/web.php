@@ -222,9 +222,27 @@ Route::get('/user/{id}/post', function($id){
 });
 
 
+
 Route::get('/post/{id}/user', function($id){
 
     return Post::find($id)->user->email;
 });
+
+
+
+////One to many relationship
+Route::get('/posts', function(){
+
+    $user = User::find(9);
+
+    foreach ($user->posts as $post) {
+        echo $post->content . "<br>";
+    }
+});
+
+
+
+////Many to many relationship
+
 
 
