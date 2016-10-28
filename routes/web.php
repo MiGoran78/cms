@@ -243,6 +243,16 @@ Route::get('/posts', function(){
 
 
 ////Many to many relationship
+Route::get('/user/{id}/role', function($id){
 
+//    $user = User::find($id)->roles()->orderBy('name', 'desc')->get();
+//    return $user;
+
+
+    $user = User::find($id);
+    foreach ($user->roles as $role) {
+        echo $role->name;
+    }
+});
 
 
