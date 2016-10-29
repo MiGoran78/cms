@@ -253,6 +253,11 @@ Route::get('/user/{id}/role', function($id){
     foreach ($user->roles as $role) {
         echo $role->name;
     }
+
+
+
+
+
 });
 
 
