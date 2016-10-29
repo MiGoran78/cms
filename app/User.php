@@ -40,7 +40,12 @@ class User extends Authenticatable
 
     public function roles(){
         return $this->belongsToMany('App\Role');
+
+        //to customize tables name and columns follow the format below
+        //return $this->belongsToMany('App\Role', 'user_roles', 'user_id', 'role_id');
     }
+
+
 
 
 }
