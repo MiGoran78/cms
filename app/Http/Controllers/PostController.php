@@ -13,7 +13,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($id){
-        return "Index method " . $id;
+        return "index = " . $id;
     }
 
     /**
@@ -22,7 +22,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        //
+        return "create method";
     }
 
     /**
@@ -42,7 +42,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id){
-        return "Show method <br> id=" . $id;
+        return "PostController - show method : " . $id;
     }
 
     /**
@@ -70,18 +70,23 @@ class PostController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *  @return \Illuminate\Http\Response
      */
     public function destroy($id){
-        //
+        //return "PostController - destroy method : " . $id;
     }
 
 
     public function contact(){
         $people = ['name1','name2','name3','name4','name5','name6'];
-
         return view('contact', compact('people'));
     }
 
 
-}
+    public function show_post($id, $name, $password){
+        //return view('post')->with('id', $id);
+        return view('post', compact('id', 'name', 'password'));
+    }
+
+
+ }

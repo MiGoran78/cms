@@ -6,8 +6,8 @@
 
     @if(count($people))
         <ul>
-        @foreach($people as $people)
-            <li>{{$people}}</li>
+        @foreach($people as $person)
+            <li>{{$person}}</li>
         @endforeach
         </ul>
     @endif
@@ -16,5 +16,5 @@
 
 
 @section('footer')
-    <script>alert('Hello')</script>
+    <script>alert('Hello visitor')</script>
 @stop
