@@ -1,5 +1,6 @@
 <?php
 
+use App\Country;
 use App\Post;
 use App\User;
 /*
@@ -230,10 +231,10 @@ Route::get('/post/{id}/user', function($id){
 
 
 
-////One to many relationship
+//One to many relationship
 Route::get('/posts', function(){
 
-    $user = User::find(9);
+    $user = User::find(1);
 
     foreach ($user->posts as $post) {
         echo $post->content . "<br>";
@@ -243,16 +244,40 @@ Route::get('/posts', function(){
 
 
 ////Many to many relationship
-Route::get('/user/{id}/role', function($id){
+Route::get('/user/{id}/role', function($id) {
 
 //    $user = User::find($id)->roles()->orderBy('name', 'desc')->get();
 //    return $user;
-
 
     $user = User::find($id);
     foreach ($user->roles as $role) {
         echo $role->name;
     }
 });
+
+
+
+//Accessing the intermediate table / pivot
+Route::get('user/pivot', function(){
+
+    $user = User::find(1);
+
+    foreach($user->roles as $role) {
+        echo $role->pivot->created_at;
+
+    }
+});
+
+
+
+Route::get('user/country', function(){
+
+    $country = Country::find(4);
+    foreach ($country->posts as $post){
+        return $post;
+    }
+});
+
+
 
 

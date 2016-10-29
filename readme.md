@@ -1,2 +1,0 @@
-# Exercise
-Laravel PHP Framework
