@@ -1,6 +1,7 @@
 .idea/
 storage/
 vendor/
+_windows/
 node_modules/
 
 # Laravel 4 specific
@@ -13,7 +14,7 @@ bootstrap/cache/
 .env.php
 .env
 .xml
-_windows/
+
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
