@@ -3,6 +3,7 @@
 use App\Country;
 use App\Photo;
 use App\Post;
+use App\Tag;
 use App\User;
 /*
 |--------------------------------------------------------------------------
@@ -317,5 +318,15 @@ Route::get('/post/tag', function(){
         echo $tag->name;
     }
 });
+
+
+Route::get('/tag/post', function(){
+    $tag = Tag::find(2);
+    foreach($tag->posts as $post){
+        return $post->title;
+    }
+});
+
+
 
 
