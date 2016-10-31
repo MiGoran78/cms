@@ -1,9 +1,7 @@
-## ---------------------------------
-## LARAVEL
-## ---------------------------------
 .idea/
 storage/
 vendor/
+_windows/
 node_modules/
 
 # Laravel 4 specific
@@ -16,29 +14,7 @@ bootstrap/cache/
 .env.php
 .env
 .xml
-_windows/
+
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
-
-
-
-
-
-## File-based project format:
-#*.iws
-
-## IntelliJ
-#/out/
-
-## mpeltonen/sbt-idea plugin
-#.idea_modules/
-
-## JIRA plugin
-#atlassian-ide-plugin.xml
-
-## Crashlytics plugin (for Android Studio and IntelliJ)
-#com_crashlytics_export_strings.xml
-#crashlytics.properties
-#crashlytics-build.properties
-#fabric.properties
