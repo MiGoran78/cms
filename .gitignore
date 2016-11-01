@@ -1,9 +1,9 @@
-.idea/
-storage/
-vendor/
-_windows/
+/.idea/
+/storage/
+/vendor/
+/_windows/
+/inspection/
 node_modules/
-inspection/
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -22,3 +22,6 @@ bootstrap/cache/
 
 
 .idea/cms.iml
+/JetBrains.gitignore
+*.iml
+*.xml
