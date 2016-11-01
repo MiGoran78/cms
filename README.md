@@ -1,2 +1,2 @@
-# Course 
+# Exercise
 PHP with Laravel

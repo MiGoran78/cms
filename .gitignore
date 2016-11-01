@@ -1,7 +1,9 @@
 .idea/
 storage/
 vendor/
+_windows/
 node_modules/
+inspection/
 
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -12,8 +14,11 @@ bootstrap/cache/
 .env.*.php
 .env.php
 .env
-.xml
-_windows/
+*.xml
+
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+
+
+.idea/cms.iml
