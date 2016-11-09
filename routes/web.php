@@ -5,6 +5,7 @@ use App\Photo;
 use App\Post;
 use App\Tag;
 use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -330,3 +331,10 @@ Route::get('/tag/post', function(){
 
 
 
+
+
+
+//CROD APPLICTION
+//---------------
+
+Route::resource('/posts', 'PostController');
