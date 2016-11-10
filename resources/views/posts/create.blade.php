@@ -4,7 +4,9 @@
 
     <h1>Create Post</h1>
 
-    <form method="post" action="/posts">
+
+    {!! Form::open(['method'=>'POST', 'action'=>'PostController@store']) !!}
+
         {{ csrf_field() }}
 
         <input type="text" name="title" placeholder="Enter title">
