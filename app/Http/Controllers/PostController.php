@@ -117,10 +117,10 @@ class PostController extends Controller
     public function destroy($id){
         //return "PostController - destroy method : " . $id;
 
-//        $post = Post::whereId($id)->delete();
+//        $post = Post::findOrFail($id);
+//        $post->delete();
 
-        $post = Post::findOrFail($id);
-        $post->delete();
+        $post = Post::whereId($id)->delete();
         return redirect('/posts');
 
     }

@@ -5,9 +5,7 @@
     <h1>Edit Post</h1>
 
     <form method="post" action="/posts/{{$post->id}}">
-
         {{ csrf_field() }}
-
 
         <input type="hidden" name="_method" value="PUT">
 
@@ -16,7 +14,8 @@
     </form>
 
 
-    <form action="/post/{{$post->id}}">
+    <form method="post" action="/posts/{{$post->id}}">
+        {{ csrf_field() }}
 
         <input type="hidden" name="_method" value="DELETE">
 
