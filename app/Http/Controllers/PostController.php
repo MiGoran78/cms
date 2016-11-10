@@ -66,7 +66,12 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id){
-        return "PostController - show method : " . $id;
+
+        $post = Post::findOrFail($id);
+
+        return view('posts.show', compact('post'));
+
+//        return "PostController - show method : " . $id;
     }
 
 
@@ -77,7 +82,10 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id){
-        //
+
+        $post = Post::findOrFail($id);
+
+        return view('posts.edit', compact('post'));
     }
 
 
@@ -89,7 +97,14 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id){
-        //
+
+//        return "working...";
+//        return $request->all();
+
+        $post = Post::findOrFail($id);
+        $post->update($request->all());
+        return redirect('/posts');
+
     }
 
 
@@ -101,6 +116,13 @@ class PostController extends Controller
      */
     public function destroy($id){
         //return "PostController - destroy method : " . $id;
+
+//        $post = Post::findOrFail($id);
+//        $post->delete();
+
+        $post = Post::whereId($id)->delete();
+        return redirect('/posts');
+
     }
 
 
