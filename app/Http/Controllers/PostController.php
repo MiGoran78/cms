@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
@@ -12,9 +13,14 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id){
-        return "index = " . $id;
+    public function index(){
+//        return "index = " . $id;
+
+        $posts = Post::all();
+
+        return view('posts.index', compact('posts'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -22,8 +28,9 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        return "create method";
+        return view('posts.create');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -32,8 +39,25 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request){
-        //
+//        return $request->all();
+//        return $request->get('title');
+//        return $request->title;
+
+
+        Post::create($request->all());
+
+        return redirect('/posts');
+
+//        $input = $request->all();
+//        $input['title'] = $request->title;
+//        Post::create($request->all());
+
+//        $post = new Post();
+//        $post->title = $request->title;
+//        $post->save();
+
     }
+
 
     /**
      * Display the specified resource.
@@ -45,6 +69,7 @@ class PostController extends Controller
         return "PostController - show method : " . $id;
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -54,6 +79,7 @@ class PostController extends Controller
     public function edit($id){
         //
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -65,6 +91,7 @@ class PostController extends Controller
     public function update(Request $request, $id){
         //
     }
+
 
     /**
      * Remove the specified resource from storage.
