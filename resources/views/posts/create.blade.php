@@ -9,11 +9,18 @@
 
         {{ csrf_field() }}
 
-        <input type="text" name="title" placeholder="Enter title">
-        <input type="submit" name="submit">
-    </form>
+        <div class="form-group">
+            {!! Form::label('title', 'Title:') !!}
+            {!! Form::text('title', null, ['class'=>'form-controll']) !!}
+        </div>
 
 
+        <div class="form-group">
+            {!! Form::submit('Create Post', ['class'=>'btn btn-primary']) !!}
+        </div>
+
+
+    {!! Form::close() !!}
 
 
 @endsection
