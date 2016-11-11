@@ -25,9 +25,9 @@ use App\User;
 
 
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/', function () {
+    return 'Welcome to Laravel';
+});
 
 
 //Route::get('/about', function () {
@@ -337,8 +337,14 @@ Route::get('/tag/post', function(){
 //CROD APPLICTION
 //---------------
 
-Route::resource('/posts', 'PostController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+
+Route::group(['middleware'=>'web'], function(){
+    Route::resource('/posts', 'PostController');
+
+
+});
