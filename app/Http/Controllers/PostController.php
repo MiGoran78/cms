@@ -62,7 +62,6 @@ class PostController extends Controller
             $name = $file->getClientOriginalName();
             $file->move('images', $name);
 
-            $input['file'] = $name;
             $input['path'] = $name;
         }
 

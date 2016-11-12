@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
+    public $pic_path = "/images/";
+
     use SoftDeletes;
 
 //    protected $table = 'posts';
@@ -35,4 +37,10 @@ class Post extends Model
     public static function scopeLatest($query){
         return $query->orderBy('id', 'desc')->get();
     }
+
+
+    public function getPathAttribute($value){
+        return $this->pic_path . $value;
+    }
+
 }
