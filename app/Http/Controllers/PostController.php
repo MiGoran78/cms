@@ -7,6 +7,8 @@ use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
+
+//
 class PostController extends Controller
 {
     /**
@@ -44,6 +46,45 @@ class PostController extends Controller
      */
     public function store(CreatePostRequest $request){
 
+//        $file = $request->file('file');
+//        echo "<br>";
+//        echo $file->getClientOriginalName();
+//
+//        echo "<br>";
+//        echo $file->getClientSize();
+
+
+
+        $input = $request->all();
+        $file = $request->file('file');
+
+        if($file){
+            $name = $file->getClientOriginalName();
+            $file->move('images', $name);
+
+            $input['file'] = $name;
+            $input['path'] = $name;
+        }
+
+        Post::create($input);
+
+
+//        // ... OR ...
+//        //=========================================
+//        if ($file){
+//            $name = $file->getClientOriginalName();
+//            $path = $file->move('images', $name);
+//        }
+//
+//        // Create Post from input
+//        $post = Post::create($request->all());
+//
+//        // Create releated Photo in Database
+//        $post->photos()->save(Photo::create(['path'=>$path]));
+//        //=========================================
+
+
+
 //        $this->validate($request, [
 //            'title'=>'required',
 //            //'content'=>'required'
@@ -55,9 +96,6 @@ class PostController extends Controller
 //        return $request->title;
 
 
-        Post::create($request->all());
-        return redirect('/posts');
-
 //        $input = $request->all();
 //        $input['title'] = $request->title;
 //        Post::create($request->all());
@@ -65,6 +103,10 @@ class PostController extends Controller
 //        $post = new Post();
 //        $post->title = $request->title;
 //        $post->save();
+
+
+        //Post::create($request->all());
+        return redirect('/posts');
 
     }
 
